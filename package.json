@@ -1,4 +1,7 @@
 {
+  "name": "game_server",
+  "description": "game server for mini game",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,6 +13,7 @@
     "pm2-delete": "pm2 delete server"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "winston": "^3.11.0"

@@ -12,8 +12,14 @@ const { log } = require('console');
 const express = require('express');
 const winston = require('winston');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors({
+    origin: "*",
+    methods: ["GET","POST", "OPTION"]
+}))
 
 app.use(morgan('combined'));
 
@@ -115,6 +121,9 @@ app.post('/v1/api/query_game_info', (req, res) => {
     res.json(return_obj);
 });
 
+function get_user_currency(user_id){
+    return 12344556;
+}
 
 // 查询用户金币
 app.post('/v1/api/get_user_currency', (req, res) => {
@@ -132,7 +141,7 @@ app.post('/v1/api/get_user_currency', (req, res) => {
     } = req.body;
 
     const unique_id = Date.now().toString();
-    // currency_balance = get_user_currency(user_id)
+    currency_balance = get_user_currency(user_id)
     // 
 
     logger.info(`get_user_currency: app_channel:${app_channel}, game_id: ${game_id}, app_id: ${app_id}, user_id: ${user_id}, unique_id: ${unique_id}, currency_balance: ${currency_balance}`)
