@@ -29,7 +29,14 @@ const baseCurrency = 0;
 app.use(cors({
     origin: "*",
     methods: ["GET","POST", "OPTION"]
-}))
+}),(req, res, next) => {
+        res.set('X-Content-Type-Options', 'nosniff');
+        res.set('Cache-Control', 'no-store');
+        res.set('X-XSS-Protection', '1; mode=block');
+        res.set('Strict-Transport-Security', '3600');
+        res.set('Content-Security-Policy','upgrade-insecure-requests);
+        next();
+    }
 
 app.use(morgan('combined'));
 
@@ -95,7 +102,7 @@ app.post('/v1/api/query_game_info', (req, res) => {
         "code": 0,
         "msg": "success",
         "data": {
-            "game_id": 1001,
+            "game_id": 1,
             "name": "zg捕鱼",
             "preview_url": "https://xx.aliyuncs.com/admin_game/af295d878c9360322729dff2a3708297.png",
             // 缩略图地址，现需提前给zego配置
