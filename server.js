@@ -134,6 +134,7 @@ app.post('/v1/api/get_user_currency', (req, res) => {
     //     "game_id":101,
     //     "user_id": "ba7c5f34d0710525"
     // }
+	logger.info('get_user_currency begin')
     const {
         app_channel,
         game_id,
