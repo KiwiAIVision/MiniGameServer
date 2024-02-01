@@ -68,6 +68,16 @@ function getUserInfo(user_id) {
     }
 }
 
+// LB的健康检查
+app.head('/', (req, res)=>{
+    res.sendStatus(200)
+})
+
+// 测试是否联通
+app.get('/', (req, res)=>{
+    res.send('OK')
+})
+
 // 查询游戏
 app.post('/v1/api/query_game_info', (req, res) => {
     const {
