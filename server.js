@@ -202,7 +202,7 @@ app.post('/v1/api/exchange_user_currency', (req, res) => {
         "data": {
             "order_id": order_id,
             "cp_order_id": cp_order_id,
-            "currency_balance": currency_balance
+            "currency_balance": 10
         }
     }
 
