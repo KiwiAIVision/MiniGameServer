@@ -26,17 +26,22 @@ const baseCurrency = 0;
 // }));
 
 
-app.use(cors({
-    origin: "*",
-    methods: ["GET","POST", "OPTION"]
-}),(req, res, next) => {
-        res.set('X-Content-Type-Options', 'nosniff');
-        res.set('Cache-Control', 'no-store');
-        res.set('X-XSS-Protection', '1; mode=block');
-        res.set('Strict-Transport-Security', '3600');
-        res.set('Content-Security-Policy','upgrade-insecure-requests);
-        next();
-    }
+// app.use(cors({
+//     origin: "*",
+//     methods: ["GET","POST", "OPTION"]
+// }),(req, res, next) => {
+//         res.set('X-Content-Type-Options', 'nosniff');
+//         res.set('Cache-Control', 'no-store');
+//         res.set('X-XSS-Protection', '1; mode=block');
+//         res.set('Strict-Transport-Security', '3600');
+//         res.set('Content-Security-Policy','upgrade-insecure-requests);
+//         next();
+//     }
+app.use( ( request , response , next ) => {
+    response.header( 'Access-Control-Allow-Origin' , '*') // 跨域最重要的一步 设置响应头
+	response.header('Content-Security-Policy','upgrade-insecure-requests');
+    next(); // 执行next函数执行后续代码
+})
 
 app.use(morgan('combined'));
 
