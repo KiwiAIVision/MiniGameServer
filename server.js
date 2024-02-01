@@ -87,7 +87,7 @@ app.post('/v1/api/query_game_info', (req, res) => {
         "code": 0,
         "msg": "success",
         "data": {
-            "game_id": 1001,
+            "game_id": 1,
             "name": "zg捕鱼",
             "preview_url": "https://xx.aliyuncs.com/admin_game/af295d878c9360322729dff2a3708297.png",
             // 缩略图地址，现需提前给zego配置
