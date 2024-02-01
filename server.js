@@ -20,8 +20,8 @@ const baseCurrency = 0;
 
 // 启用HTTPS到HTTP的重定向
 app.use(redirect({
-  from: 'https://',
-  to: 'http://',
+  from: 'http://',
+  to: 'https://',
   permanent: true // 设置为true以在浏览器中产生301永久重定向
 }));
 
