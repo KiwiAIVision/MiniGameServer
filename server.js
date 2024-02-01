@@ -18,23 +18,10 @@ const app = express();
 const baseCurrency = 0;
 
 
-// 启用HTTPS到HTTP的重定向
-// app.use(redirect({
-//   from: 'http://',
-//   to: 'https://',
-//   permanent: true // 设置为true以在浏览器中产生301永久重定向
-// }));
-
-
 app.use(cors({
     origin: "*",
     methods: ["GET","POST", "OPTION"]
 }))
-// app.use( ( request , response , next ) => {
-//     response.header( 'Access-Control-Allow-Origin' , '*') // 跨域最重要的一步 设置响应头
-// 	response.header('Content-Security-Policy','upgrade-insecure-requests');
-//     next(); // 执行next函数执行后续代码
-// })
 
 app.use(morgan('combined'));
 
@@ -100,7 +87,7 @@ app.post('/v1/api/query_game_info', (req, res) => {
         "code": 0,
         "msg": "success",
         "data": {
-            "game_id": 1,
+            "game_id": 1001,
             "name": "zg捕鱼",
             "preview_url": "https://xx.aliyuncs.com/admin_game/af295d878c9360322729dff2a3708297.png",
             // 缩略图地址，现需提前给zego配置
