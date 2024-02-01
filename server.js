@@ -17,6 +17,15 @@ const cors = require('cors');
 const app = express();
 const baseCurrency = 0;
 
+
+// 启用HTTPS到HTTP的重定向
+app.use(redirect({
+  from: 'https://',
+  to: 'http://',
+  permanent: true // 设置为true以在浏览器中产生301永久重定向
+}));
+
+
 app.use(cors({
     origin: "*",
     methods: ["GET","POST", "OPTION"]
