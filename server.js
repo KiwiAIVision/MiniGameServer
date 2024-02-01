@@ -154,7 +154,7 @@ app.post('/v1/api/get_user_currency', (req, res) => {
         "message": "succeed",
         "unique_id": unique_id,
         "data": {
-            "currency_balance": 1,
+            "currency_balance": 999999,
         }
     }
 
