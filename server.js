@@ -180,7 +180,7 @@ app.post('/v1/api/exchange_user_currency', (req, res) => {
     currency_balance = 0
 
     if (user_info != null) {
-        currency_balance = user_info['currency']
+        currency_balance = user_info['currency_diff']
     } else {
         logger.info('user_info is null')
     }
@@ -202,7 +202,7 @@ app.post('/v1/api/exchange_user_currency', (req, res) => {
         "data": {
             "order_id": order_id,
             "cp_order_id": cp_order_id,
-            "currency_balance": 10
+            "currency_balance": currency_balance
         }
     }
 
