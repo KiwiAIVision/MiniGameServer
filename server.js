@@ -185,14 +185,14 @@ app.post('/v1/api/exchange_user_currency', (req, res) => {
     // } else {
     //     logger.info('user_info is null')
     // }
-	baseCurrency = baseCurrency + req.body['currency_diff'];
+	// baseCurrency = baseCurrency + req.body['currency_diff'];
 
     logger.info(`currency_balance: ${currency_balance}`)
 
     logger.info(`exchange_user_currency: order_id: ${order_id}, currency_diff: ${currency_diff}, user_id: ${user_id}, game_id: ${game_id}, app_id: ${app_id}, signature_nonce: ${signature_nonce}, timestamp: ${timestamp}, signature: ${signature}, unique_id: ${unique_id}, currency_balance: ${currency_balance}`)
 
     // currency_balance = currency_balance + currency_diff
-	currency_balance = baseCurrency;
+	// currency_balance = baseCurrency;
 
     logger.info(`currency_balance: ${currency_balance}`)
     // 更新当前用户金币
@@ -205,7 +205,7 @@ app.post('/v1/api/exchange_user_currency', (req, res) => {
         "data": {
             "order_id": order_id,
             "cp_order_id": cp_order_id,
-            "currency_balance": currency_balance
+            "currency_balance": 100
         }
     }
 
