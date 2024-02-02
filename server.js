@@ -99,10 +99,10 @@ app.post('/v1/api/query_game_info', (req, res) => {
         "data": {
             "game_id": 1,
             "name": "zg捕鱼",
-            "preview_url": "https://xx.aliyuncs.com/admin_game/af295d878c9360322729dff2a3708297.png",
+            "preview_url": "https://docservice-storage-tx.zego.im/mini-game/image/ZgFish/thumbnail1.png",
             // 缩略图地址，现需提前给zego配置
             "game_version": "1.0.0", //游戏版本
-            "download_url": "https://xx.com/Game/index.html?ts=1675740304057950404",// 游戏加载地址
+            "download_url": "https://mini-game-test-demo.zego.im/CCFish/index.html?zego_platform=web",// 游戏加载地址
             "local_game_resource": {
                 "local_file_url": "https://oss-cn-shanghai.aliyuncs.com/mini-game/....",
                 "local_file_version": "1.1.16",
@@ -121,7 +121,7 @@ app.post('/v1/api/query_game_info', (req, res) => {
             "game_mode": [
                 1
             ], // 1.直播间游戏 2.秀场游戏 3.全屏游戏
-            "game_orientation": 1, //1.竖屏 2.横屏
+            "game_orientation": 2, //1.竖屏 2.横屏
             "design_width": 750, // 分辨率宽
             "design_height": 1334, // 分辨率高
             "safe_height": 1334, //游戏的安全高
@@ -164,7 +164,7 @@ app.post('/v1/api/get_user_currency', (req, res) => {
         "message": "succeed",
         "unique_id": unique_id,
         "data": {
-            "currency_balance": 1,
+            "currency_balance": 999990,
         }
     }
 
